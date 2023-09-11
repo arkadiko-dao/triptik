@@ -2,11 +2,11 @@ import ProductTag from "./ProductTag";
 
 export default function Product({name, background, decoration, basis, shadow, order, iconPath, titleTop, titleBottom, subtitleTop, subtitleBottom, buttonTextColor, buttonBorderColor}) {
   return (
-    <section className={`min-h-[calc(100vh-72px)] pt-24 overflow-hidden relative h-full ${background} ${basis} ${shadow} ${order}`}>
-      <div className="w-full h-full absolute inset-0 top-16 bg-cover" style={{backgroundImage: `url(${decoration})`}}>
+    <section className={`lg:min-h-[calc(100vh-72px)] pt-24 overflow-hidden relative h-full ${background} ${basis} ${shadow} ${order}`}>
+      <div className="absolute inset-0 w-full h-full bg-cover top-16" style={{backgroundImage: `url(${decoration})`}}>
       </div>
 
-      <div className="text-center lg:px-6 mx-auto relative">
+      <div className="relative mx-auto text-center lg:px-6 min-h-[calc(100vh-72px-12rem)]">
         <header className="lg:mt-[8vh]">
           <svg className="w-10 h-10 mx-auto mb-4" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
             {iconPath}
@@ -22,7 +22,7 @@ export default function Product({name, background, decoration, basis, shadow, or
             <>
               <h2 className="text-5xl font-headings">Self-repaying loans</h2>
 
-              <div className="mx-auto border border-white/20 bg-white/20 rounded-sm px-5 py-3 mt-8 flex items-center inline-flex gap-4 shadow-white/5 shadow-inner">
+              <div className="flex inline-flex items-center gap-4 px-5 py-3 mx-auto mt-8 border rounded-sm shadow-inner border-white/20 bg-white/20 shadow-white/5">
                 <div className="flex items-center gap-2 mx-auto">
                   <div className="bg-[linear-gradient(135deg,#5546ff,rgba(122,64,238,0))] border border-white/40 w-8 h-8 rounded-full flex items-center justify-center"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.2157 13.4L9.49991 9.28531H13.3999V7.73291H0.600098V9.28711H4.49885L1.78437 13.4H3.80952L7.00003 8.56587L10.1905 13.4H12.2157ZM13.4 6.22624V4.65821H9.57915L12.2576 0.599976H10.2324L7 5.49751L3.76761 0.599976H1.74247L4.42434 4.66185H0.600098V6.22624H13.4Z" fill="white"/></svg></div>
                   <p className="text-lg font-medium text-gray-800">Deposit <strong>STX</strong></p>
@@ -47,17 +47,16 @@ export default function Product({name, background, decoration, basis, shadow, or
             </>
           )}
         </div>
+        <footer className="text-center lg:absolute lg:bottom-[8rem] lg:transform lg:left-1/2 lg:-translate-x-1/2 my-8 lg:my-0">
+          <button type="button" className={`${buttonTextColor} ${buttonBorderColor} border bg-[#180B26] rounded text-lg px-6 py-3 inline-flex items-center gap-x-2`}>
+            Launch app
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fillRule="evenodd" clipRule="evenodd" d="M3 10C3 9.8011 3.07902 9.61033 3.21967 9.46968C3.36032 9.32903 3.55109 9.25001 3.75 9.25001H14.388L10.23 5.29001C10.1557 5.22257 10.0956 5.1409 10.0534 5.04983C10.0112 4.95875 9.98771 4.86014 9.98432 4.75982C9.98093 4.65951 9.99771 4.55953 10.0337 4.46582C10.0696 4.37211 10.124 4.28657 10.1937 4.21427C10.2633 4.14196 10.3467 4.08437 10.439 4.04491C10.5313 4.00544 10.6306 3.9849 10.7309 3.9845C10.8313 3.98411 10.9307 4.00386 11.0233 4.0426C11.1159 4.08133 11.1998 4.13826 11.27 4.21001L16.77 9.46001C16.8426 9.52997 16.9003 9.61385 16.9398 9.70663C16.9792 9.79941 16.9995 9.89919 16.9995 10C16.9995 10.1008 16.9792 10.2006 16.9398 10.2934C16.9003 10.3862 16.8426 10.47 16.77 10.54L11.27 15.79C11.1998 15.8618 11.1159 15.9187 11.0233 15.9574C10.9307 15.9962 10.8313 16.0159 10.7309 16.0155C10.6306 16.0151 10.5313 15.9946 10.439 15.9551C10.3467 15.9156 10.2633 15.8581 10.1937 15.7857C10.124 15.7134 10.0696 15.6279 10.0337 15.5342C9.99771 15.4405 9.98093 15.3405 9.98432 15.2402C9.98771 15.1399 10.0112 15.0413 10.0534 14.9502C10.0956 14.8591 10.1557 14.7774 10.23 14.71L14.388 10.75H3.75C3.55109 10.75 3.36032 10.671 3.21967 10.5303C3.07902 10.3897 3 10.1989 3 10Z" fill="currentColor"/>
+            </svg>
+          </button>
+          <p className="mt-2"><a href="" className="[text-shadow:_0_1px_0_rgb(0_0_0_/_40%)] text-white/80 text-center text-sm hover:underline hover:text-white transition ">Learn more</a></p>
+        </footer>
       </div>
-
-      <footer className="text-center lg:absolute lg:bottom-[8rem] lg:transform lg:left-1/2 lg:-translate-x-1/2 my-8 lg:my-0">
-        <button type="button" className={`${buttonTextColor} ${buttonBorderColor} border bg-[#180B26] rounded text-lg px-6 py-3 inline-flex items-center gap-x-2`}>
-          Launch app
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path fillRule="evenodd" clipRule="evenodd" d="M3 10C3 9.8011 3.07902 9.61033 3.21967 9.46968C3.36032 9.32903 3.55109 9.25001 3.75 9.25001H14.388L10.23 5.29001C10.1557 5.22257 10.0956 5.1409 10.0534 5.04983C10.0112 4.95875 9.98771 4.86014 9.98432 4.75982C9.98093 4.65951 9.99771 4.55953 10.0337 4.46582C10.0696 4.37211 10.124 4.28657 10.1937 4.21427C10.2633 4.14196 10.3467 4.08437 10.439 4.04491C10.5313 4.00544 10.6306 3.9849 10.7309 3.9845C10.8313 3.98411 10.9307 4.00386 11.0233 4.0426C11.1159 4.08133 11.1998 4.13826 11.27 4.21001L16.77 9.46001C16.8426 9.52997 16.9003 9.61385 16.9398 9.70663C16.9792 9.79941 16.9995 9.89919 16.9995 10C16.9995 10.1008 16.9792 10.2006 16.9398 10.2934C16.9003 10.3862 16.8426 10.47 16.77 10.54L11.27 15.79C11.1998 15.8618 11.1159 15.9187 11.0233 15.9574C10.9307 15.9962 10.8313 16.0159 10.7309 16.0155C10.6306 16.0151 10.5313 15.9946 10.439 15.9551C10.3467 15.9156 10.2633 15.8581 10.1937 15.7857C10.124 15.7134 10.0696 15.6279 10.0337 15.5342C9.99771 15.4405 9.98093 15.3405 9.98432 15.2402C9.98771 15.1399 10.0112 15.0413 10.0534 14.9502C10.0956 14.8591 10.1557 14.7774 10.23 14.71L14.388 10.75H3.75C3.55109 10.75 3.36032 10.671 3.21967 10.5303C3.07902 10.3897 3 10.1989 3 10Z" fill="currentColor"/>
-          </svg>
-        </button>
-        <p className="mt-2"><a href="" className="[text-shadow:_0_1px_0_rgb(0_0_0_/_40%)] text-white/80 text-center text-sm hover:underline hover:text-white transition ">Learn more</a></p>
-      </footer>
     </section>
   )
 }
