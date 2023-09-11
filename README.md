@@ -4,6 +4,9 @@
 
 ## Development
 
-`npx parcel src/index.html`
+```
+npm i
+npx parcel src/index.html
+```
 
 There. That's it.
