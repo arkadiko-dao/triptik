@@ -7,7 +7,7 @@ export default function Main() {
 
   return (
     <main className="lg:min-h-[calc(100vh-88px-72px)]">
-      <div className="flex flex-col lg:flex-row h-full">
+      <div className="flex flex-col h-full lg:flex-row">
 
         <Product
           name="Keepers"
@@ -25,7 +25,7 @@ export default function Main() {
           subtitleTop="Triggers smart contracts"
           subtitleBottom="based on multiple events"
 
-          buttonTextColor="text-[#73E6B1]"
+          buttonTextColor="text-[#73E6B1] hover:bg-[#73E6B1] hover:shadow-lg hover:text-[#180B26]"
           buttonBorderColor="border-[#73E6B1]"
         />
 
@@ -41,7 +41,7 @@ export default function Main() {
 
           titleTop="Self-repaying loans"
 
-          buttonTextColor="text-[#67B4FF]"
+          buttonTextColor="text-[#67B4FF] hover:bg-[#67B4FF] hover:shadow-lg hover:text-[#180B26]"
           buttonBorderColor="border-[#67B4FF]"
         />
 
@@ -51,6 +51,7 @@ export default function Main() {
           decoration={dlcs}
 
           basis="basis-[28.93%]"
+          shadow="lg:shadow-[16px_0px_12px_0px_rgba(0,0,0,0.25)_inset]"
           order="order-3"
 
           iconPath={<path fill="#5A2D0B" fillRule="evenodd" d="M30.216 37.638h-3.06v4.827c0 .846-.689 1.535-1.543 1.535a1.53 1.53 0 0 1-1.527-1.535v-4.828h-4.463v4.828a1.535 1.535 0 0 1-3.069 0v-4.828h-3.028A1.531 1.531 0 0 1 12 36.095c0-.837.68-1.526 1.526-1.526h3.028V13.432h-3.028A1.528 1.528 0 0 1 12 11.905c0-.854.68-1.542 1.526-1.542h3.028V5.535a1.535 1.535 0 1 1 3.07 0v4.828h4.462V5.535c0-.847.68-1.535 1.527-1.535.854 0 1.543.688 1.543 1.535v4.828c4.155.041 7.515 3.426 7.515 7.581a7.543 7.543 0 0 1-1.858 4.978 7.6 7.6 0 0 1 4.994 7.134c0 4.172-3.401 7.582-7.59 7.582Zm.003-12.1H19.624v9.03h10.595a4.514 4.514 0 1 0 0-9.03Zm-3.13-12.106a4.526 4.526 0 0 1 4.516 4.515 4.52 4.52 0 0 1-4.515 4.515h-7.466v-9.03h7.466Z" clipRule="evenodd"/>
@@ -61,7 +62,7 @@ export default function Main() {
           subtitleTop="Put your BTC to work without"
           subtitleBottom="bridging or wrapping"
 
-          buttonTextColor="text-[#FE3535]"
+          buttonTextColor="text-[#FE3535] hover:bg-[#FE3535] hover:shadow-lg hover:text-[#180B26]"
           buttonBorderColor="border-[#FE3535]"
         />
 
