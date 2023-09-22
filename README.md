@@ -12,7 +12,7 @@ npx parcel src/index.html
 ## Production
 
 ```
-parcel build src/index.html
+npx parcel build src/index.html
 ```
 
 There. That's it.
