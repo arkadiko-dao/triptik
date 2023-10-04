@@ -48,7 +48,7 @@ export default function Product({name, href, learnMore, live = true, background,
             </>
           )}
         </div>
-        <footer className="text-center lg:absolute lg:bottom-[5rem] lg:transform lg:left-1/2 lg:-translate-x-1/2 my-8 lg:my-0">
+        <footer className="my-8 text-center lg:absolute lg:bottom-1 lg:transform lg:left-1/2 lg:-translate-x-1/2 lg:my-0">
           {live ? (
             <>
               <a href={href} className={`${buttonTextColor} ${buttonBorderColor} border bg-[#180B26] rounded text-sm xl:text-lg px-4 xl:px-6 py-3 inline-flex items-center gap-x-2 transition duration-500 group/cta`}>

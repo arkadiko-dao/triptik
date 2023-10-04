@@ -1,11 +1,28 @@
 import { useState } from 'react'
 import { Dialog } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import { navigation as nav } from './Footer'
+import { IconKeepers, IconStablecoin, IconDLCs } from './Main'
 
 const navigation = [
-  { name: 'Core product', href: '#' },
-  { name: 'Keepers', href: '#' },
-  { name: 'DLCs', href: '#' },
+  {
+    name: 'Stablecoin',
+    href: 'https://app.arkadiko.finance/',
+    icon: <IconStablecoin />,
+    color: 'bg-[#4597e6]/90'
+  },
+  {
+    name: 'Keepers',
+    href: 'https://keepersapp.arkadiko.finance/',
+    icon: <IconKeepers />,
+    color: 'bg-[#73e6b1]/90'
+  },
+  {
+    name: 'DLCs',
+    href: 'https://www.dlc.link/blog/4-ways-dlc-links-bitcoin-attestors-enable-finance-on-bitcoin',
+    icon: <IconDLCs />,
+    color: 'bg-[#e7c047]/90'
+  },
 ]
 
 export default function Header() {
@@ -26,7 +43,7 @@ export default function Header() {
         <div className="flex lg:hidden">
           <button
             type="button"
-            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-100/50"
+            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-100"
             onClick={() => setMobileMenuOpen(true)}
           >
             <span className="sr-only">Open main menu</span>
@@ -39,7 +56,7 @@ export default function Header() {
         <Dialog.Panel className="fixed inset-y-0 left-0 z-10 w-full px-6 py-6 overflow-y-auto bg-[#180A24]">
           <div className="flex items-center justify-between">
             <div className="flex flex-1">
-              <a href="#" className="-m-1.5 p-1.5 flex flex-1">
+              <a href="/" className="-m-1.5 p-1.5 flex flex-1">
                 <span className="sr-only">Arkadiko</span>
                 <svg className="h-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 56 43">
                   <path fill="#fff" d="M17.76 1.426c.203-.427.523-.788.925-1.04A2.516 2.516 0 0 1 20.03 0h10.715a2.5 2.5 0 0 1 2.147 1.194L55.645 38.52c.467.759.467 1.703.028 2.463a2.502 2.502 0 0 1-.92.909 2.525 2.525 0 0 1-1.254.331h-11.2a2.53 2.53 0 0 1-1.773-.713 29.32 29.32 0 0 0-15.075-7.565c-6.346-1.009-13.823.37-21.187 7.565a2.545 2.545 0 0 1-3.192.278 2.426 2.426 0 0 1-.985-1.365 2.408 2.408 0 0 1 .144-1.672l17.52-37.325h.01Zm6.627 3.472 19.35 32.418h5.357L29.325 4.908h-4.938v-.01ZM34.552 31.65 20.299 7.75 8.912 31.992a27.416 27.416 0 0 1 17.342-2.87c2.987.462 5.787 1.388 8.298 2.527Z"/>
@@ -55,14 +72,42 @@ export default function Header() {
               </button>
             </div>
           </div>
-          <div className="mt-6 space-y-4">
+          <div className="px-8 py-4 mt-6 space-y-2 rounded-md bg-white/5">
             {navigation.map((item) => (
               <a
                 key={item.name}
                 href={item.href}
-                className="block px-3 py-2 -mx-3 text-3xl leading-7 text-gray-100 rounded-lg hover:bg-gray-900"
+                className={`flex items-center block gap-6 px-3 py-2 -mx-3 text-2xl leading-7 text-black/60 font-bold rounded-lg ${item.color}`}
               >
+                <svg className="w-8 h-8" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  {item.icon}
+                </svg>
                 {item.name}
+              </a>
+            ))}
+          </div>
+          <div className="px-8 py-4 mt-6 bg-black rounded-md">
+            <ul className="space-y-2">
+              {nav.main.map((item) => (
+                <li key={item.name} className="rounded-lg hover:bg-[#180A24] px-3 pt-1 -mx-3">
+                  <a
+                    href={item.href}
+                    className="inline-flex items-center block gap-4 text-2xl leading-7 text-gray-100 rounded-lg"
+                  >
+                    <div className="flex items-center justify-center w-10 h-10 text-white shrink-0 sm:h-12 sm:w-12">
+                      <item.icon aria-hidden="true" />
+                    </div>
+                    {item.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="flex items-center justify-center px-8 py-4 mt-6 space-x-6 bg-black rounded-md">
+            {nav.social.map((item) => (
+              <a key={item.name} href={item.href} className="flex items-center justify-center shrink-0 w-12 h-12 hover:bg-[#180A24] rounded-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 text-white/80 hover:text-white rounded-xl">
+                <span className="sr-only">{item.name}</span>
+                <item.icon className="w-6 h-6" aria-hidden="true" />
               </a>
             ))}
           </div>
