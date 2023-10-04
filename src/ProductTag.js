@@ -8,7 +8,7 @@ export default function ProductTag({ children, product }) {
   const type = productsMap[product];
 
   return (
-    <div className={`inline-flex leading-6 py-0.5 px-4 rounded-3xl border border-white/30 bg-[linear-gradient(119deg,rgba(255,255,255,0.20)_32.15%,rgba(255,255,255,0.00)_90.81%)] text-lg font-medium ${type}`}>
+    <div className={`inline-flex leading-6 py-0.5 px-4 rounded-3xl border border-white/30 bg-[linear-gradient(119deg,rgba(255,255,255,0.20)_32.15%,rgba(255,255,255,0.00)_90.81%)] text-base sm:text-lg font-medium ${type}`}>
       {children}
     </div>
   )
