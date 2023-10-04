@@ -1,6 +1,6 @@
 import ProductTag from "./ProductTag";
 
-export default function Product({name, background, decoration, basis, shadow, order, iconPath, titleTop, titleBottom, subtitleTop, subtitleBottom, buttonTextColor, buttonBorderColor}) {
+export default function Product({name, href, learnMore, disabled, background, decoration, basis, shadow, order, iconPath, titleTop, titleBottom, subtitleTop, subtitleBottom, buttonTextColor, buttonBorderColor}) {
   return (
     <section className={`group/root lg:min-h-[calc(100vh-72px)] pt-24 overflow-hidden relative h-full ${background} ${basis} ${shadow} ${order}`}>
       <div className="absolute inset-0 w-full h-full transition duration-[5000ms] bg-cover top-16 group-hover/root:scale-110" style={{backgroundImage: `url(${decoration})`}}>
@@ -18,7 +18,7 @@ export default function Product({name, background, decoration, basis, shadow, or
         </header>
 
         <div className="mt-8">
-          {name === "Core product" ? (
+          {name === "Stablecoin" ? (
             <>
               <h2 className="text-5xl font-headings">Self-repaying loans</h2>
 
@@ -48,13 +48,19 @@ export default function Product({name, background, decoration, basis, shadow, or
           )}
         </div>
         <footer className="text-center lg:absolute lg:bottom-[5rem] lg:transform lg:left-1/2 lg:-translate-x-1/2 my-8 lg:my-0">
-          <a href="#" className={`${buttonTextColor} ${buttonBorderColor} border bg-[#180B26] rounded text-sm xl:text-lg px-4 xl:px-6 py-3 inline-flex items-center gap-x-2 transition duration-500 group/cta`}>
-            Launch app
+          <a href={href} className={`${buttonTextColor} ${buttonBorderColor} border bg-[#180B26] rounded text-sm xl:text-lg px-4 xl:px-6 py-3 inline-flex items-center gap-x-2 transition duration-500 group/cta`}>
+            {disabled ? (
+              <span>Coming Soon</span>
+            ) : (
+              <span>Launch app</span>
+            )}
             <svg className="group-hover/cta:translate-x-1" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path fillRule="evenodd" clipRule="evenodd" d="M3 10C3 9.8011 3.07902 9.61033 3.21967 9.46968C3.36032 9.32903 3.55109 9.25001 3.75 9.25001H14.388L10.23 5.29001C10.1557 5.22257 10.0956 5.1409 10.0534 5.04983C10.0112 4.95875 9.98771 4.86014 9.98432 4.75982C9.98093 4.65951 9.99771 4.55953 10.0337 4.46582C10.0696 4.37211 10.124 4.28657 10.1937 4.21427C10.2633 4.14196 10.3467 4.08437 10.439 4.04491C10.5313 4.00544 10.6306 3.9849 10.7309 3.9845C10.8313 3.98411 10.9307 4.00386 11.0233 4.0426C11.1159 4.08133 11.1998 4.13826 11.27 4.21001L16.77 9.46001C16.8426 9.52997 16.9003 9.61385 16.9398 9.70663C16.9792 9.79941 16.9995 9.89919 16.9995 10C16.9995 10.1008 16.9792 10.2006 16.9398 10.2934C16.9003 10.3862 16.8426 10.47 16.77 10.54L11.27 15.79C11.1998 15.8618 11.1159 15.9187 11.0233 15.9574C10.9307 15.9962 10.8313 16.0159 10.7309 16.0155C10.6306 16.0151 10.5313 15.9946 10.439 15.9551C10.3467 15.9156 10.2633 15.8581 10.1937 15.7857C10.124 15.7134 10.0696 15.6279 10.0337 15.5342C9.99771 15.4405 9.98093 15.3405 9.98432 15.2402C9.98771 15.1399 10.0112 15.0413 10.0534 14.9502C10.0956 14.8591 10.1557 14.7774 10.23 14.71L14.388 10.75H3.75C3.55109 10.75 3.36032 10.671 3.21967 10.5303C3.07902 10.3897 3 10.1989 3 10Z" fill="currentColor"/>
             </svg>
           </a>
-          <p className="mt-3"><a href="#" className="[text-shadow:_0_1px_0_rgb(0_0_0_/_40%)] text-white/80 py-1 px-3 bg-neutral-900/70 border-neutral-200/20 border rounded-sm text-center text-xs  hover:text-white hover:bg-neutral-900/90 transition duration-600">Learn more</a></p>
+          <p className="mt-3">
+            <a href={learnMore} className="[text-shadow:_0_1px_0_rgb(0_0_0_/_40%)] text-white/80 py-1 px-3 bg-neutral-900/70 border-neutral-200/20 border rounded-sm text-center text-xs  hover:text-white hover:bg-neutral-900/90 transition duration-600">Learn more</a>
+          </p>
         </footer>
       </div>
     </section>
