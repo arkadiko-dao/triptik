@@ -13,7 +13,6 @@ export default function Main() {
           name="Keepers"
           href="https://keepersapp.arkadiko.finance/"
           learnMore="https://keepers.arkadiko.finance/"
-          disabled={false}
           background="bg-[linear-gradient(168deg,#73E6B1_31.37%,#180A24_92.84%)]"
           decoration={keepers}
 
@@ -36,7 +35,6 @@ export default function Main() {
           name="Stablecoin"
           href="https://app.arkadiko.finance/"
           learnMore="https://usda.arkadiko.finance/"
-          disabled={false}
           background="bg-[linear-gradient(168deg,#4597E6_42.82%,#180A24_84.04%)]"
           decoration={core}
 
@@ -55,7 +53,7 @@ export default function Main() {
           name="DLCs"
           href="#"
           learnMore="https://www.dlc.link/blog/4-ways-dlc-links-bitcoin-attestors-enable-finance-on-bitcoin"
-          disabled={true}
+          live={false}
           background="bg-[linear-gradient(171deg,#E7C047_12.92%,#DC2626_64.05%,#180A24_83.47%)]"
           decoration={dlcs}
 
