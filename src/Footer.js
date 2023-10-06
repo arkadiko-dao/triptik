@@ -99,7 +99,7 @@ export default function Footer() {
               <item.icon className="w-6 h-6" aria-hidden="true" />
             </a>
           ))}
-          <Popover className="">
+          <Popover>
             {({ open }) => (
               <>
                 <Popover.Button
