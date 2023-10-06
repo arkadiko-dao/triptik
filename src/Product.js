@@ -2,7 +2,7 @@ import ProductTag from "./ProductTag";
 
 export default function Product({name, href, learnMore, live = true, background, decoration, basis, shadow, order, iconPath, titleTop, titleBottom, subtitleTop, subtitleBottom, buttonTextColor, buttonBorderColor}) {
   return (
-    <section className={`group/root lg:min-h-[calc(100vh-72px)] pt-12 sm:pt-24 overflow-hidden relative ${background} ${basis} ${shadow} ${order}`}>
+    <section className={`group/root lg:min-h-[calc(100vh-72px)] pt-6 sm:pt-24 overflow-hidden relative ${background} ${basis} ${shadow} ${order}`}>
       <div className="absolute inset-0 w-full h-full transition duration-[5000ms] bg-cover sm:top-16 group-hover/root:scale-110" style={{backgroundImage: `url(${decoration})`}}>
       </div>
 
