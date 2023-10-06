@@ -2,12 +2,12 @@ import ProductTag from "./ProductTag";
 
 export default function Product({name, href, learnMore, live = true, background, decoration, basis, shadow, order, iconPath, titleTop, titleBottom, subtitleTop, subtitleBottom, buttonTextColor, buttonBorderColor}) {
   return (
-    <section className={`group/root lg:min-h-[calc(100vh-72px)] pt-12 sm:pt-24 overflow-hidden relative h-full ${background} ${basis} ${shadow} ${order}`}>
+    <section className={`group/root lg:min-h-[calc(100vh-72px)] pt-12 sm:pt-24 overflow-hidden relative ${background} ${basis} ${shadow} ${order}`}>
       <div className="absolute inset-0 w-full h-full transition duration-[5000ms] bg-cover sm:top-16 group-hover/root:scale-110" style={{backgroundImage: `url(${decoration})`}}>
       </div>
 
       <div className="relative mx-auto text-center lg:px-6 min-h-[calc(100vh-72px-12rem)]">
-        <header className="lg:mt-[8vh]">
+        <header className="lg:mt-[4vh]">
           <svg className="w-6 h-6 mx-auto mb-4 sm:w-10 sm:h-10" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
             {iconPath}
           </svg>
@@ -17,13 +17,13 @@ export default function Product({name, href, learnMore, live = true, background,
           </ProductTag>
         </header>
 
-        <div className="mt-8">
+        <div className="mt-8 min-h-[40vh]">
           {name === "Stablecoin" ? (
             <>
               <h2 className="text-3xl sm:text-5xl font-headings">Self-repaying loans</h2>
               <p className="mt-8 text-lg font-medium text-gray-800">Collateralize your STX tokens,<br/>mint our stablecoin USDA,<br />and use it for yield farming.</p>
 
-              <div className="flex inline-flex items-center gap-4 px-4 py-3 mx-auto mt-8 border rounded-sm shadow-inner sm:px-5 border-white/20 bg-white/20 shadow-white/5">
+              <div className="flex inline-flex items-center gap-4 px-4 py-3 mx-auto my-8 border rounded-sm shadow-inner sm:px-5 border-white/20 bg-white/20 shadow-white/5">
                 <div className="flex items-center gap-2 mx-auto">
                   <div className="bg-[linear-gradient(135deg,#5546ff,rgba(122,64,238,0))] border border-white/40 w-8 h-8 rounded-full flex items-center justify-center"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.2157 13.4L9.49991 9.28531H13.3999V7.73291H0.600098V9.28711H4.49885L1.78437 13.4H3.80952L7.00003 8.56587L10.1905 13.4H12.2157ZM13.4 6.22624V4.65821H9.57915L12.2576 0.599976H10.2324L7 5.49751L3.76761 0.599976H1.74247L4.42434 4.66185H0.600098V6.22624H13.4Z" fill="white"/></svg></div>
                   <p className="text-base font-medium text-gray-800 sm:text-lg">Deposit <strong>STX</strong></p>
@@ -48,9 +48,9 @@ export default function Product({name, href, learnMore, live = true, background,
             </>
           )}
         </div>
-        <footer className="my-8 text-center lg:absolute lg:bottom-1 lg:transform lg:left-1/2 lg:-translate-x-1/2 lg:my-0">
+        <footer className="mt-auto min-h-[20vh]">
           {live ? (
-            <>
+            <div className="py-8 text-center lg:my-0">
               <a href={href} className={`${buttonTextColor} ${buttonBorderColor} border bg-[#180B26] rounded text-sm xl:text-lg px-4 xl:px-6 py-3 inline-flex items-center gap-x-2 transition duration-500 group/cta`}>
                 <span>Launch app</span>
                 <svg className="group-hover/cta:translate-x-1" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -61,14 +61,16 @@ export default function Product({name, href, learnMore, live = true, background,
               <p className="mt-3">
                 <a href={learnMore} className="[text-shadow:_0_1px_0_rgb(0_0_0_/_40%)] text-white/80 py-1 px-3 bg-neutral-900/70 border-neutral-200/20 border rounded-sm text-center text-xs  hover:text-white hover:bg-neutral-900/90 transition duration-600">Learn more</a>
               </p>
-            </>
+            </div>
           ) : (
-            <a href={learnMore} className={`${buttonTextColor} ${buttonBorderColor} mb-9 border bg-[#180B26] rounded text-sm xl:text-lg px-4 xl:px-6 py-3 inline-flex items-center gap-x-2 transition duration-500 group/cta`}>
-              <span>Learn more</span>
-              <svg className="group-hover/cta:translate-x-1" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path fillRule="evenodd" clipRule="evenodd" d="M3 10C3 9.8011 3.07902 9.61033 3.21967 9.46968C3.36032 9.32903 3.55109 9.25001 3.75 9.25001H14.388L10.23 5.29001C10.1557 5.22257 10.0956 5.1409 10.0534 5.04983C10.0112 4.95875 9.98771 4.86014 9.98432 4.75982C9.98093 4.65951 9.99771 4.55953 10.0337 4.46582C10.0696 4.37211 10.124 4.28657 10.1937 4.21427C10.2633 4.14196 10.3467 4.08437 10.439 4.04491C10.5313 4.00544 10.6306 3.9849 10.7309 3.9845C10.8313 3.98411 10.9307 4.00386 11.0233 4.0426C11.1159 4.08133 11.1998 4.13826 11.27 4.21001L16.77 9.46001C16.8426 9.52997 16.9003 9.61385 16.9398 9.70663C16.9792 9.79941 16.9995 9.89919 16.9995 10C16.9995 10.1008 16.9792 10.2006 16.9398 10.2934C16.9003 10.3862 16.8426 10.47 16.77 10.54L11.27 15.79C11.1998 15.8618 11.1159 15.9187 11.0233 15.9574C10.9307 15.9962 10.8313 16.0159 10.7309 16.0155C10.6306 16.0151 10.5313 15.9946 10.439 15.9551C10.3467 15.9156 10.2633 15.8581 10.1937 15.7857C10.124 15.7134 10.0696 15.6279 10.0337 15.5342C9.99771 15.4405 9.98093 15.3405 9.98432 15.2402C9.98771 15.1399 10.0112 15.0413 10.0534 14.9502C10.0956 14.8591 10.1557 14.7774 10.23 14.71L14.388 10.75H3.75C3.55109 10.75 3.36032 10.671 3.21967 10.5303C3.07902 10.3897 3 10.1989 3 10Z" fill="currentColor"/>
-              </svg>
-            </a>
+            <div className="py-8 text-center lg:my-0">
+              <a href={learnMore} className={`${buttonTextColor} ${buttonBorderColor} border bg-[#180B26] rounded text-sm xl:text-lg px-4 xl:px-6 py-3 inline-flex items-center gap-x-2 transition duration-500 group/cta`}>
+                <span>Learn more</span>
+                <svg className="group-hover/cta:translate-x-1" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fillRule="evenodd" clipRule="evenodd" d="M3 10C3 9.8011 3.07902 9.61033 3.21967 9.46968C3.36032 9.32903 3.55109 9.25001 3.75 9.25001H14.388L10.23 5.29001C10.1557 5.22257 10.0956 5.1409 10.0534 5.04983C10.0112 4.95875 9.98771 4.86014 9.98432 4.75982C9.98093 4.65951 9.99771 4.55953 10.0337 4.46582C10.0696 4.37211 10.124 4.28657 10.1937 4.21427C10.2633 4.14196 10.3467 4.08437 10.439 4.04491C10.5313 4.00544 10.6306 3.9849 10.7309 3.9845C10.8313 3.98411 10.9307 4.00386 11.0233 4.0426C11.1159 4.08133 11.1998 4.13826 11.27 4.21001L16.77 9.46001C16.8426 9.52997 16.9003 9.61385 16.9398 9.70663C16.9792 9.79941 16.9995 9.89919 16.9995 10C16.9995 10.1008 16.9792 10.2006 16.9398 10.2934C16.9003 10.3862 16.8426 10.47 16.77 10.54L11.27 15.79C11.1998 15.8618 11.1159 15.9187 11.0233 15.9574C10.9307 15.9962 10.8313 16.0159 10.7309 16.0155C10.6306 16.0151 10.5313 15.9946 10.439 15.9551C10.3467 15.9156 10.2633 15.8581 10.1937 15.7857C10.124 15.7134 10.0696 15.6279 10.0337 15.5342C9.99771 15.4405 9.98093 15.3405 9.98432 15.2402C9.98771 15.1399 10.0112 15.0413 10.0534 14.9502C10.0956 14.8591 10.1557 14.7774 10.23 14.71L14.388 10.75H3.75C3.55109 10.75 3.36032 10.671 3.21967 10.5303C3.07902 10.3897 3 10.1989 3 10Z" fill="currentColor"/>
+                </svg>
+              </a>
+            </div>
           )}
         </footer>
       </div>
