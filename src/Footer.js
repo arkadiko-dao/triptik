@@ -7,7 +7,7 @@ export const navigation = {
     {
       name: 'Brand',
       description: 'Brand kit, logo, colors & fonts.',
-      href: 'https://arkadiko.finance/brand',
+      href: 'https://usda.arkadiko.finance/brand',
       icon: IconBrand,
     },
     {
@@ -19,19 +19,19 @@ export const navigation = {
     {
       name: 'Press Review',
       description: 'Arkadiko, everywhere.',
-      href: 'https://arkadiko.finance/press-review',
+      href: 'https://usda.arkadiko.finance/press-review',
       icon: IconPr,
     },
     {
       name: 'Roadmap',
       description: 'Where we\'re going we don\'t need fiat.',
-      href: 'https://arkadiko.finance/roadmap',
+      href: 'https://usda.arkadiko.finance/roadmap',
       icon: IconRoadmap,
     },
     {
       name: 'EULA',
       description: 'End User License Agreement.',
-      href: 'https://arkadiko.finance/arkadiko-EULA.pdf',
+      href: 'https://usda.arkadiko.finance/arkadiko-EULA.pdf',
       icon: IconEula,
     },
   ],
