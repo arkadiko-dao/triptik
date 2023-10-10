@@ -24,8 +24,8 @@ export default function Main() {
 
           titleTop="Decentralized Smart Contract"
           titleBottom="Automation"
-          subtitleTop="Triggers smart contracts"
-          subtitleBottom="based on multiple events"
+          subtitleTop="Triggers smart contract operations"
+          subtitleBottom="based on conditional events"
 
           buttonTextColor="text-[#73E6B1] hover:bg-[#73E6B1] hover:shadow-lg hover:text-[#180B26]"
           buttonBorderColor="border-[#73E6B1]"
