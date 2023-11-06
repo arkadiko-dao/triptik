@@ -89,10 +89,10 @@ export default function Header() {
           <div className="px-8 py-4 mt-6 bg-black rounded-md">
             <ul className="space-y-2">
               {nav.main.map((item) => (
-                <li key={item.name} className="rounded-lg hover:bg-[#180A24] px-3 pt-1 -mx-3">
+                <li key={item.name} className="rounded-lg hover:bg-[#180A24] pt-1 -mx-3">
                   <a
                     href={item.href}
-                    className="inline-flex items-center block gap-4 text-2xl leading-7 text-gray-100 rounded-lg"
+                    className="flex items-center block gap-4 text-2xl leading-7 text-gray-100 rounded-lg"
                   >
                     <div className="flex items-center justify-center w-10 h-10 text-white shrink-0 sm:h-12 sm:w-12">
                       <item.icon aria-hidden="true" />
@@ -103,7 +103,7 @@ export default function Header() {
               ))}
             </ul>
           </div>
-          <div className="flex items-center justify-center px-8 py-4 mt-6 space-x-6 bg-black rounded-md">
+          <div className="flex items-center justify-center px-8 py-4 mt-6 space-x-3.5 bg-black rounded-md">
             {nav.social.map((item) => (
               <a key={item.name} href={item.href} className="flex items-center justify-center shrink-0 w-12 h-12 hover:bg-[#180A24] rounded-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 text-white/80 hover:text-white rounded-xl">
                 <span className="sr-only">{item.name}</span>
