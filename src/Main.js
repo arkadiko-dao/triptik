@@ -43,7 +43,7 @@ export default function Main() {
 
           iconPath={<IconStablecoin />}
 
-          titleTop="Self-repaying loans"
+          titleTop="On-Chain Borrowing, Secured by Bitcoin"
 
           buttonTextColor="text-[#67B4FF] hover:bg-[#67B4FF] hover:shadow-lg hover:text-[#180B26]"
           buttonBorderColor="border-[#67B4FF]"

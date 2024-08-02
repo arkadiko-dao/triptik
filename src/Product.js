@@ -20,7 +20,7 @@ export default function Product({name, href, learnMore, live = true, background,
         <div className="mt-8 min-h-[40vh]">
           {name === "Stablecoin" ? (
             <>
-              <h2 className="text-3xl sm:text-5xl font-headings">Self-repaying loans</h2>
+              <h2 className="text-3xl sm:text-5xl font-headings">On-Chain Borrowing,<br/>Secured by Bitcoin</h2>
               <p className="mt-8 text-lg font-medium text-gray-800">Collateralize your STX tokens,<br/>mint our stablecoin USDA,<br/>and use it for various on-chain activities</p>
 
               <div className="flex inline-flex items-center gap-4 px-4 py-3 mx-auto my-8 border rounded-sm shadow-inner sm:px-5 border-white/20 bg-white/20 shadow-white/5">
